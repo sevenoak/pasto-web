@@ -1,162 +1,520 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pasto — Politique de confidentialité</title>
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍽️</text></svg>">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        :root {
-            --primary: #2D7B5E;
-            --bg: #F5F3F0;
-            --card: #FFFFFF;
-            --text: #1A1A1A;
-            --text-sec: #6B7280;
-            --border: #E5E0D8;
-        }
-        body {
-            font-family: 'Nunito', -apple-system, sans-serif;
-            background: var(--bg);
-            color: var(--text);
-            line-height: 1.7;
-        }
-        .header {
-            background: var(--primary);
-            padding: 48px 24px 36px;
-            text-align: center;
-        }
-        .header h1 { color: white; font-size: 28px; font-weight: 900; letter-spacing: -0.5px; }
-        .header p { color: rgba(255,255,255,0.7); font-size: 14px; margin-top: 8px; }
-        .back { display: inline-block; color: rgba(255,255,255,0.8); text-decoration: none; font-weight: 700; font-size: 14px; margin-bottom: 16px; }
-        .back:hover { color: white; }
-        .content {
-            max-width: 720px;
-            margin: -20px auto 60px;
-            background: var(--card);
-            border-radius: 24px;
-            padding: 40px 36px;
-            box-shadow: 0 4px 24px rgba(0,0,0,0.06);
-        }
-        h2 {
-            font-size: 20px;
-            font-weight: 800;
-            color: var(--primary);
-            margin: 32px 0 12px;
-            letter-spacing: -0.3px;
-        }
-        h2:first-child { margin-top: 0; }
-        p, li { font-size: 15px; color: var(--text-sec); margin-bottom: 12px; }
-        ul { padding-left: 20px; margin-bottom: 16px; }
-        li { margin-bottom: 6px; }
-        strong { color: var(--text); }
-        .highlight {
-            background: #E8F5EE;
-            border-left: 4px solid var(--primary);
-            padding: 16px 20px;
-            border-radius: 0 12px 12px 0;
-            margin: 20px 0;
-        }
-        .highlight p { margin-bottom: 0; color: var(--text); }
-        .footer {
-            text-align: center;
-            padding: 32px;
-            font-size: 13px;
-            color: var(--text-sec);
-            opacity: 0.7;
-        }
-        .footer strong { color: var(--primary); }
-        @media (max-width: 480px) {
-            .content { margin: -20px 12px 40px; padding: 28px 20px; }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Politique de Confidentialité — Pasto</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --green-deep: #1B3A2D;
+      --green-mid: #2D6A4F;
+      --green-light: #5DB87A;
+      --green-pale: #F0F7F2;
+      --cream: #FAFAF7;
+      --text: #1a1a1a;
+      --text-muted: #6B7280;
+      --border: #E5EDE8;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--cream);
+      color: var(--text);
+      line-height: 1.75;
+      font-size: 16px;
+    }
+
+    /* HEADER */
+    header {
+      background: var(--green-deep);
+      padding: 56px 24px 48px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 30% 50%, rgba(93,184,122,0.15) 0%, transparent 60%),
+                  radial-gradient(ellipse at 80% 20%, rgba(45,106,79,0.3) 0%, transparent 50%);
+    }
+
+    .header-inner { position: relative; z-index: 1; }
+
+    .app-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(93,184,122,0.15);
+      border: 1px solid rgba(93,184,122,0.3);
+      border-radius: 100px;
+      padding: 6px 16px;
+      margin-bottom: 20px;
+    }
+
+    .app-badge span {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--green-light);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    header h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(28px, 5vw, 44px);
+      color: #fff;
+      font-weight: 400;
+      margin-bottom: 12px;
+      letter-spacing: -0.01em;
+    }
+
+    header p {
+      color: rgba(255,255,255,0.55);
+      font-size: 14px;
+      font-weight: 300;
+    }
+
+    /* LAYOUT */
+    .container {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 56px 24px 80px;
+    }
+
+    /* TABLE DES MATIÈRES */
+    .toc {
+      background: var(--green-pale);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 28px 32px;
+      margin-bottom: 48px;
+    }
+
+    .toc-title {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--green-mid);
+      margin-bottom: 16px;
+    }
+
+    .toc ol {
+      list-style: none;
+      counter-reset: toc-counter;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px 24px;
+    }
+
+    @media (max-width: 520px) { .toc ol { grid-template-columns: 1fr; } }
+
+    .toc li {
+      counter-increment: toc-counter;
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+    }
+
+    .toc li::before {
+      content: counter(toc-counter, decimal-leading-zero);
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--green-light);
+      flex-shrink: 0;
+    }
+
+    .toc a {
+      font-size: 14px;
+      color: var(--green-deep);
+      text-decoration: none;
+      font-weight: 400;
+      transition: color 0.2s;
+    }
+
+    .toc a:hover { color: var(--green-light); }
+
+    /* SECTIONS */
+    section {
+      margin-bottom: 48px;
+      padding-bottom: 48px;
+      border-bottom: 1px solid var(--border);
+      animation: fadeUp 0.4s ease both;
+    }
+
+    section:last-child { border-bottom: none; }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .section-number {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--green-light);
+      margin-bottom: 8px;
+    }
+
+    h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(20px, 3vw, 26px);
+      color: var(--green-deep);
+      font-weight: 400;
+      margin-bottom: 20px;
+      letter-spacing: -0.01em;
+    }
+
+    h3 {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--green-mid);
+      margin: 24px 0 10px;
+    }
+
+    p { margin-bottom: 14px; color: #3a3a3a; font-size: 15px; }
+    p:last-child { margin-bottom: 0; }
+
+    ul {
+      list-style: none;
+      margin: 12px 0 16px;
+    }
+
+    ul li {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      padding: 6px 0;
+      font-size: 15px;
+      color: #3a3a3a;
+      border-bottom: 1px solid #f0f0ee;
+    }
+
+    ul li:last-child { border-bottom: none; }
+
+    ul li::before {
+      content: '→';
+      color: var(--green-light);
+      font-weight: 600;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    /* CARDS */
+    .card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px 24px;
+      margin: 16px 0;
+    }
+
+    .card-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--green-deep);
+      margin-bottom: 6px;
+    }
+
+    .card p { font-size: 14px; color: var(--text-muted); margin: 0; }
+
+    /* HIGHLIGHT */
+    .highlight {
+      background: linear-gradient(135deg, var(--green-deep) 0%, var(--green-mid) 100%);
+      border-radius: 16px;
+      padding: 24px 28px;
+      margin: 20px 0;
+      color: #fff;
+    }
+
+    .highlight p { color: rgba(255,255,255,0.85); font-size: 14px; margin: 0; }
+    .highlight strong { color: #fff; }
+
+    /* NOT COLLECTED */
+    .not-collected {
+      background: #FFF8F0;
+      border: 1px solid #FFE4C4;
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 16px 0;
+    }
+
+    .not-collected .label {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #D97706;
+      margin-bottom: 10px;
+    }
+
+    .not-collected ul li { color: #92400E; border-bottom-color: #FFE4C4; }
+    .not-collected ul li::before { color: #D97706; content: '✕'; }
+
+    /* CONTACT */
+    .contact-card {
+      background: var(--green-deep);
+      border-radius: 16px;
+      padding: 28px 32px;
+      text-align: center;
+    }
+
+    .contact-card h3 { color: #fff; font-size: 18px; margin: 0 0 8px; }
+    .contact-card p { color: rgba(255,255,255,0.65); font-size: 14px; }
+
+    .contact-link {
+      display: inline-block;
+      margin-top: 16px;
+      background: var(--green-light);
+      color: #fff;
+      text-decoration: none;
+      padding: 12px 28px;
+      border-radius: 100px;
+      font-size: 14px;
+      font-weight: 600;
+      transition: opacity 0.2s;
+    }
+
+    .contact-link:hover { opacity: 0.85; }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 32px 24px;
+      border-top: 1px solid var(--border);
+      color: var(--text-muted);
+      font-size: 13px;
+    }
+  </style>
 </head>
 <body>
 
-<div class="header">
-    <a href="https://mypasto.fr" class="back">← Retour à l'accueil</a>
-    <h1>Politique de confidentialité</h1>
-    <p>Dernière mise à jour : mars 2026</p>
-</div>
-
-<div class="content">
-
-    <h2>1. Introduction</h2>
-    <p>Pasto (« l'Application ») est une application mobile de coaching nutritionnel développée et éditée par Nicolas (« nous », « notre »). La protection de vos données personnelles est une priorité. Cette politique explique comment nous collectons, utilisons et protégeons vos informations.</p>
-
-    <div class="highlight">
-        <p>🔒 <strong>En résumé :</strong> Nous ne vendons jamais vos données. Vos informations nutritionnelles restent privées. Vous pouvez supprimer votre compte et toutes vos données à tout moment.</p>
+<header>
+  <div class="header-inner">
+    <div class="app-badge">
+      <span>🌿 Pasto</span>
     </div>
+    <h1>Politique de Confidentialité</h1>
+    <p>Dernière mise à jour : 11 mars 2026</p>
+  </div>
+</header>
 
-    <h2>2. Données collectées</h2>
-    <p>Nous collectons les données suivantes, uniquement lorsque vous les fournissez :</p>
+<div class="container">
+
+  <!-- TABLE DES MATIÈRES -->
+  <nav class="toc">
+    <div class="toc-title">Sommaire</div>
+    <ol>
+      <li><a href="#s1">Responsable du traitement</a></li>
+      <li><a href="#s2">Données collectées</a></li>
+      <li><a href="#s3">Finalités et bases légales</a></li>
+      <li><a href="#s4">Intelligence Artificielle</a></li>
+      <li><a href="#s5">Partage avec des tiers</a></li>
+      <li><a href="#s6">Durée de conservation</a></li>
+      <li><a href="#s7">Vos droits RGPD</a></li>
+      <li><a href="#s8">Sécurité</a></li>
+      <li><a href="#s9">Protection des mineurs</a></li>
+      <li><a href="#s10">Cookies</a></li>
+      <li><a href="#s11">Modifications</a></li>
+      <li><a href="#s12">Nous contacter</a></li>
+    </ol>
+  </nav>
+
+  <p style="margin-bottom:40px; color: var(--text-muted); font-size:15px;">
+    Bienvenue sur Pasto. Nous accordons une importance capitale à la protection de vos données personnelles. Cette politique décrit de manière transparente quelles données nous collectons, pourquoi et comment nous les utilisons, ainsi que vos droits. En utilisant l'application, vous acceptez les pratiques décrites ci-dessous.
+  </p>
+
+  <!-- 1 -->
+  <section id="s1">
+    <div class="section-number">01</div>
+    <h2>Responsable du traitement</h2>
+    <p>Pasto est une application indépendante développée et exploitée par un développeur individuel basé en France.</p>
+    <p>Pour toute question relative à vos données personnelles :</p>
+    <div class="highlight">
+      <p>📧 <strong>contact@mypasto.fr</strong></p>
+      <p>🌐 <strong>https://mypasto.fr</strong></p>
+    </div>
+  </section>
+
+  <!-- 2 -->
+  <section id="s2">
+    <div class="section-number">02</div>
+    <h2>Données personnelles collectées</h2>
+
+    <h3>Données que vous nous fournissez directement</h3>
     <ul>
-        <li><strong>Compte :</strong> adresse email, mot de passe (chiffré), nom/pseudo</li>
-        <li><strong>Profil nutritionnel :</strong> date de naissance, poids, taille, sexe, objectif, niveau d'activité, préférences alimentaires</li>
-        <li><strong>Journal alimentaire :</strong> repas enregistrés, aliments, calories et macronutriments</li>
-        <li><strong>Planning :</strong> recettes planifiées, listes de courses</li>
-        <li><strong>Activité physique :</strong> données de pas, calories brûlées (si vous connectez Apple Santé, Google Fit ou Strava)</li>
-        <li><strong>Photos de repas :</strong> uniquement si vous utilisez la fonctionnalité d'analyse photo par IA (les photos sont analysées puis supprimées)</li>
+      <li>Adresse e-mail (lors de la création de votre compte)</li>
+      <li>Prénom et nom (optionnels, pour personnaliser l'expérience)</li>
+      <li>Profil nutritionnel : âge, poids, taille, objectif alimentaire, régime préféré</li>
+      <li>Photos de repas (si vous utilisez l'analyse photo — abonnés Premium uniquement)</li>
+      <li>Messages échangés avec le coach IA</li>
+      <li>Planning de repas et recettes sauvegardées</li>
     </ul>
 
-    <h2>3. Utilisation des données</h2>
-    <p>Vos données sont utilisées exclusivement pour :</p>
+    <h3>Données collectées automatiquement</h3>
     <ul>
-        <li>Calculer vos objectifs nutritionnels personnalisés</li>
-        <li>Alimenter le coach IA avec votre contexte (objectif, poids, préférences)</li>
-        <li>Générer des recommandations de recettes et menus adaptés</li>
-        <li>Suivre votre progression (poids, journal, activité)</li>
-        <li>Permettre le partage de planning entre amis (uniquement avec votre consentement)</li>
+      <li>Données d'utilisation anonymisées : fréquence de connexion, fonctionnalités utilisées</li>
+      <li>Informations techniques : type d'appareil, version de l'OS, version de l'application</li>
     </ul>
 
-    <h2>4. Intelligence artificielle</h2>
-    <p>Pasto utilise les modèles d'IA d'Anthropic (Claude) pour le coaching nutritionnel, la génération de recettes et l'analyse de photos de repas. Les données envoyées à l'IA comprennent votre profil nutritionnel (objectif, poids, préférences) et le contenu de vos messages au coach. <strong>Anthropic ne conserve pas vos données</strong> au-delà du traitement de la requête et ne les utilise pas pour entraîner ses modèles.</p>
+    <div class="not-collected">
+      <div class="label">⚠️ Ce que nous ne collectons pas</div>
+      <ul>
+        <li>Localisation GPS</li>
+        <li>Contacts ou galerie photo en dehors de l'analyse de repas</li>
+        <li>Données financières (traitées directement par Apple / Google / RevenueCat)</li>
+      </ul>
+    </div>
+  </section>
 
-    <h2>5. Stockage et sécurité</h2>
-    <p>Vos données sont stockées sur les serveurs <strong>Supabase</strong> (infrastructure AWS, hébergement en Europe). Les communications sont chiffrées via HTTPS/TLS. Les mots de passe sont hashés (bcrypt). L'accès à la base de données est protégé par des politiques de sécurité au niveau des lignes (Row Level Security).</p>
+  <!-- 3 -->
+  <section id="s3">
+    <div class="section-number">03</div>
+    <h2>Finalités et bases légales du traitement</h2>
 
-    <h2>6. Partage des données</h2>
-    <p>Nous <strong>ne vendons, ne louons et ne partageons jamais</strong> vos données personnelles avec des tiers à des fins commerciales. Vos données peuvent être partagées uniquement dans les cas suivants :</p>
+    <div class="card">
+      <div class="card-title">Fourniture du service</div>
+      <p>Créer et gérer votre compte, personnaliser vos recommandations, faire fonctionner le coach IA et l'analyse photo. <em>Base légale : exécution du contrat.</em></p>
+    </div>
+    <div class="card">
+      <div class="card-title">Amélioration de l'application</div>
+      <p>Analyser l'utilisation de façon anonymisée pour améliorer nos services. <em>Base légale : intérêt légitime.</em></p>
+    </div>
+    <div class="card">
+      <div class="card-title">Communications transactionnelles</div>
+      <p>Envoi d'e-mails de confirmation d'inscription et de réinitialisation de mot de passe. <em>Base légale : exécution du contrat.</em></p>
+    </div>
+  </section>
+
+  <!-- 4 -->
+  <section id="s4">
+    <div class="section-number">04</div>
+    <h2>Intelligence Artificielle et traitement des données</h2>
+    <p>Pasto utilise l'API Claude d'Anthropic pour le coach nutritionnel et l'analyse photo des repas. Lorsque vous interagissez avec ces fonctionnalités :</p>
     <ul>
-        <li><strong>Avec vos amis :</strong> si vous partagez votre planning ou une liste de courses (fonctionnalité opt-in)</li>
-        <li><strong>Avec Anthropic :</strong> pour le traitement des requêtes IA (sans conservation)</li>
-        <li><strong>Obligation légale :</strong> si requis par la loi française ou européenne</li>
+      <li>Vos messages et photos sont transmis de façon sécurisée aux serveurs d'Anthropic pour traitement</li>
+      <li>Anthropic traite ces données selon sa propre politique de confidentialité (anthropic.com)</li>
+      <li>Nous ne conservons pas vos conversations au-delà du nécessaire au fonctionnement du service</li>
     </ul>
+    <div class="highlight">
+      <p>🛡️ <strong>Engagement fort :</strong> nous n'utilisons pas vos données pour entraîner des modèles d'intelligence artificielle.</p>
+    </div>
+  </section>
 
-    <h2>7. Vos droits (RGPD)</h2>
-    <p>Conformément au Règlement Général sur la Protection des Données (RGPD), vous disposez des droits suivants :</p>
+  <!-- 5 -->
+  <section id="s5">
+    <div class="section-number">05</div>
+    <h2>Partage des données avec des tiers</h2>
+    <p>Nous ne vendons jamais vos données. Nous partageons uniquement avec les prestataires strictement nécessaires au fonctionnement de l'application :</p>
+
+    <div class="card">
+      <div class="card-title">Supabase — Infrastructure et base de données</div>
+      <p>Hébergement de vos données sur des serveurs sécurisés situés dans l'Union Européenne. Supabase est conforme au RGPD.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">Anthropic — Intelligence artificielle</div>
+      <p>Traitement des requêtes du coach IA et de l'analyse photo. Anthropic est soumis aux lois américaines sur la protection des données.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">Resend — Envoi d'e-mails</div>
+      <p>Envoi des e-mails transactionnels (confirmation de compte, réinitialisation de mot de passe).</p>
+    </div>
+    <div class="card">
+      <div class="card-title">RevenueCat / Apple / Google — Paiements</div>
+      <p>Gestion des abonnements Premium. Nous ne recevons jamais vos coordonnées bancaires directement.</p>
+    </div>
+  </section>
+
+  <!-- 6 -->
+  <section id="s6">
+    <div class="section-number">06</div>
+    <h2>Durée de conservation des données</h2>
     <ul>
-        <li><strong>Accès :</strong> consulter toutes vos données dans l'application (profil, journal, planning)</li>
-        <li><strong>Rectification :</strong> modifier vos informations à tout moment dans l'app</li>
-        <li><strong>Suppression :</strong> supprimer votre compte et toutes vos données depuis Profil → Supprimer mon compte</li>
-        <li><strong>Portabilité :</strong> nous contacter pour obtenir une copie de vos données</li>
-        <li><strong>Opposition :</strong> vous pouvez cesser d'utiliser l'application à tout moment</li>
+      <li>Données de compte : conservées tant que votre compte est actif</li>
+      <li>Données de planning et recettes : conservées tant que votre compte est actif</li>
+      <li>Logs techniques anonymisés : 90 jours maximum</li>
+      <li>Suppression de compte : toutes vos données sont supprimées définitivement sous 30 jours</li>
     </ul>
-    <p>Pour exercer ces droits, contactez-nous à <strong>contact@mypasto.fr</strong>.</p>
+    <p style="margin-top:16px;">Vous pouvez supprimer votre compte directement depuis l'application : <strong>Profil → Supprimer mon compte</strong>.</p>
+  </section>
 
-    <h2>8. Cookies et suivi</h2>
-    <p>L'application mobile Pasto <strong>n'utilise aucun cookie, aucun tracker publicitaire et aucun outil d'analytics tiers</strong>. Nous ne suivons pas votre activité à des fins publicitaires.</p>
-
-    <h2>9. Données des mineurs</h2>
-    <p>Pasto est destiné aux utilisateurs de 16 ans et plus. Nous ne collectons pas sciemment de données de mineurs de moins de 16 ans. Si vous êtes parent et pensez que votre enfant utilise l'application, contactez-nous pour demander la suppression du compte.</p>
-
-    <h2>10. Modifications</h2>
-    <p>Nous pouvons mettre à jour cette politique de confidentialité. En cas de modification significative, nous vous en informerons via l'application. La date de dernière mise à jour est indiquée en haut de cette page.</p>
-
-    <h2>11. Contact</h2>
-    <p>Pour toute question concernant cette politique ou vos données :</p>
+  <!-- 7 -->
+  <section id="s7">
+    <div class="section-number">07</div>
+    <h2>Vos droits (RGPD)</h2>
+    <p>Conformément au Règlement Général sur la Protection des Données, vous disposez des droits suivants :</p>
     <ul>
-        <li>Email : <strong>contact@mypasto.fr</strong></li>
-        <li>Site : <strong>mypasto.fr</strong></li>
+      <li><strong>Droit d'accès</strong> — obtenir une copie de vos données personnelles</li>
+      <li><strong>Droit de rectification</strong> — corriger des données inexactes</li>
+      <li><strong>Droit à l'effacement</strong> — demander la suppression de vos données</li>
+      <li><strong>Droit à la portabilité</strong> — recevoir vos données dans un format structuré</li>
+      <li><strong>Droit d'opposition</strong> — vous opposer à certains traitements</li>
+      <li><strong>Droit de limitation</strong> — limiter le traitement de vos données</li>
     </ul>
+    <p style="margin-top:16px;">Pour exercer ces droits : <strong>contact@mypasto.fr</strong></p>
+    <p>En cas de désaccord, vous pouvez introduire une réclamation auprès de la <strong>CNIL</strong> : <a href="https://www.cnil.fr" style="color:var(--green-mid);">www.cnil.fr</a></p>
+  </section>
+
+  <!-- 8 -->
+  <section id="s8">
+    <div class="section-number">08</div>
+    <h2>Sécurité des données</h2>
+    <ul>
+      <li>Toutes les communications sont chiffrées via HTTPS/TLS</li>
+      <li>Les mots de passe sont hachés, jamais stockés en clair</li>
+      <li>L'accès à la base de données est protégé par des politiques de sécurité strictes (Row Level Security)</li>
+      <li>Seul le développeur a accès à l'infrastructure, avec authentification multi-facteurs</li>
+    </ul>
+  </section>
+
+  <!-- 9 -->
+  <section id="s9">
+    <div class="section-number">09</div>
+    <h2>Protection des mineurs</h2>
+    <p>Pasto n'est pas destiné aux personnes de moins de 16 ans. Nous ne collectons pas sciemment de données personnelles concernant des mineurs. Si vous êtes parent et pensez que votre enfant nous a fourni des données, contactez-nous immédiatement à <strong>contact@mypasto.fr</strong>.</p>
+  </section>
+
+  <!-- 10 -->
+  <section id="s10">
+    <div class="section-number">10</div>
+    <h2>Cookies et traceurs</h2>
+    <p>L'application mobile Pasto n'utilise pas de cookies de suivi publicitaire. Des tokens d'authentification sont stockés localement sur votre appareil pour maintenir votre session, conformément au fonctionnement standard des applications mobiles.</p>
+  </section>
+
+  <!-- 11 -->
+  <section id="s11">
+    <div class="section-number">11</div>
+    <h2>Modifications de cette politique</h2>
+    <p>Nous nous réservons le droit de modifier cette politique à tout moment. En cas de modification substantielle, vous serez notifié par e-mail ou via une notification dans l'application au moins <strong>30 jours avant</strong> l'entrée en vigueur des changements.</p>
+    <p>La date de dernière mise à jour est indiquée en haut de ce document.</p>
+  </section>
+
+  <!-- 12 -->
+  <section id="s12">
+    <div class="section-number">12</div>
+    <h2>Nous contacter</h2>
+    <div class="contact-card">
+      <h3>Une question sur vos données ?</h3>
+      <p>Nous nous engageons à répondre à toute demande dans un délai de 30 jours.</p>
+      <a href="mailto:contact@mypasto.fr" class="contact-link">contact@mypasto.fr</a>
+    </div>
+  </section>
 
 </div>
 
-<div class="footer">
-    🍽️ <strong>Pasto</strong> — Ton coach nutrition IA
-</div>
+<footer>
+  © 2026 Pasto — Tous droits réservés &nbsp;·&nbsp; mypasto.fr
+</footer>
 
 </body>
 </html>
