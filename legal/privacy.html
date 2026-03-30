@@ -9,14 +9,14 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --green-deep: #1B3A2D;
-      --green-mid: #2D6A4F;
-      --green-light: #5DB87A;
-      --green-pale: #F0F7F2;
-      --cream: #FAFAF7;
+      --green-deep: #2D7B5E;
+      --green-mid: #3A9572;
+      --green-light: #4CAF82;
+      --green-pale: #E8F5EE;
+      --cream: #F5F3F0;
       --text: #1a1a1a;
       --text-muted: #6B7280;
-      --border: #E5EDE8;
+      --border: #E5E0D8;
     }
 
     html { scroll-behavior: smooth; }
@@ -42,8 +42,8 @@
       content: '';
       position: absolute;
       inset: 0;
-      background: radial-gradient(ellipse at 30% 50%, rgba(93,184,122,0.15) 0%, transparent 60%),
-                  radial-gradient(ellipse at 80% 20%, rgba(45,106,79,0.3) 0%, transparent 50%);
+      background: radial-gradient(ellipse at 30% 50%, rgba(76,175,130,0.15) 0%, transparent 60%),
+                  radial-gradient(ellipse at 80% 20%, rgba(45,123,94,0.3) 0%, transparent 50%);
     }
 
     .header-inner { position: relative; z-index: 1; }
@@ -52,8 +52,8 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      background: rgba(93,184,122,0.15);
-      border: 1px solid rgba(93,184,122,0.3);
+      background: rgba(76,175,130,0.15);
+      border: 1px solid rgba(76,175,130,0.3);
       border-radius: 100px;
       padding: 6px 16px;
       margin-bottom: 20px;
@@ -302,10 +302,10 @@
 <header>
   <div class="header-inner">
     <div class="app-badge">
-      <span>🌿 Pasto</span>
+      <span>🍽️ Pasto</span>
     </div>
     <h1>Politique de Confidentialité</h1>
-    <p>Dernière mise à jour : 11 mars 2026</p>
+    <p>Dernière mise à jour : mars 2026</p>
   </div>
 </header>
 
@@ -354,17 +354,29 @@
     <h3>Données que vous nous fournissez directement</h3>
     <ul>
       <li>Adresse e-mail (lors de la création de votre compte)</li>
-      <li>Prénom et nom (optionnels, pour personnaliser l'expérience)</li>
-      <li>Profil nutritionnel : âge, poids, taille, objectif alimentaire, régime préféré</li>
+      <li>Prénom, nom et pseudo (optionnels, pour personnaliser l'expérience et les fonctionnalités sociales)</li>
+      <li>Profil nutritionnel : date de naissance, sexe, poids, taille, objectif alimentaire, niveau d'activité, préférences alimentaires</li>
+      <li>Journal alimentaire : repas enregistrés, aliments, calories et macronutriments</li>
+      <li>Historique de pesées et suivi du poids</li>
       <li>Photos de repas (si vous utilisez l'analyse photo — abonnés Premium uniquement)</li>
       <li>Messages échangés avec le coach IA</li>
-      <li>Planning de repas et recettes sauvegardées</li>
+      <li>Planning de repas, recettes sauvegardées et listes de courses</li>
+      <li>Placard d'ingrédients (ingrédients que vous possédez déjà)</li>
+      <li>Aliments personnalisés ajoutés manuellement</li>
     </ul>
 
-    <h3>Données collectées automatiquement</h3>
+    <h3>Données collectées via des services tiers (avec votre consentement)</h3>
     <ul>
-      <li>Données d'utilisation anonymisées : fréquence de connexion, fonctionnalités utilisées</li>
-      <li>Informations techniques : type d'appareil, version de l'OS, version de l'application</li>
+      <li>Données d'activité physique : pas, calories brûlées, minutes actives, distance (via Apple Santé, Google Fit ou Strava, si vous activez la synchronisation)</li>
+      <li>Tokens d'authentification OAuth (Strava, Google) pour maintenir la connexion à ces services</li>
+    </ul>
+
+    <h3>Données sociales (fonctionnalités optionnelles)</h3>
+    <ul>
+      <li>Liste d'amis et demandes d'amitié</li>
+      <li>Plannings partagés avec des amis</li>
+      <li>Listes de courses partagées</li>
+      <li>Notes et likes sur les recettes</li>
     </ul>
 
     <div class="not-collected">
@@ -373,6 +385,7 @@
         <li>Localisation GPS</li>
         <li>Contacts ou galerie photo en dehors de l'analyse de repas</li>
         <li>Données financières (traitées directement par Apple / Google / RevenueCat)</li>
+        <li>Données de suivi publicitaire ou analytics tiers</li>
       </ul>
     </div>
   </section>
@@ -384,11 +397,11 @@
 
     <div class="card">
       <div class="card-title">Fourniture du service</div>
-      <p>Créer et gérer votre compte, personnaliser vos recommandations, faire fonctionner le coach IA et l'analyse photo. <em>Base légale : exécution du contrat.</em></p>
+      <p>Créer et gérer votre compte, personnaliser vos recommandations nutritionnelles, faire fonctionner le coach IA, l'analyse photo, le planning et les fonctionnalités sociales. <em>Base légale : exécution du contrat.</em></p>
     </div>
     <div class="card">
-      <div class="card-title">Amélioration de l'application</div>
-      <p>Analyser l'utilisation de façon anonymisée pour améliorer nos services. <em>Base légale : intérêt légitime.</em></p>
+      <div class="card-title">Synchronisation d'activité physique</div>
+      <p>Récupérer vos données de pas, calories brûlées et activité depuis Apple Santé, Google Fit ou Strava pour ajuster vos objectifs nutritionnels. <em>Base légale : consentement explicite.</em></p>
     </div>
     <div class="card">
       <div class="card-title">Communications transactionnelles</div>
@@ -400,14 +413,15 @@
   <section id="s4">
     <div class="section-number">04</div>
     <h2>Intelligence Artificielle et traitement des données</h2>
-    <p>Pasto utilise l'API Claude d'Anthropic pour le coach nutritionnel et l'analyse photo des repas. Lorsque vous interagissez avec ces fonctionnalités :</p>
+    <p>Pasto utilise l'API Claude d'Anthropic pour le coach nutritionnel, la génération de recettes, la création de menus hebdomadaires et l'analyse photo des repas. Lorsque vous interagissez avec ces fonctionnalités :</p>
     <ul>
+      <li>Votre profil nutritionnel (objectif, poids, préférences) est transmis pour personnaliser les réponses</li>
       <li>Vos messages et photos sont transmis de façon sécurisée aux serveurs d'Anthropic pour traitement</li>
-      <li>Anthropic traite ces données selon sa propre politique de confidentialité (anthropic.com)</li>
-      <li>Nous ne conservons pas vos conversations au-delà du nécessaire au fonctionnement du service</li>
+      <li>Anthropic ne conserve pas vos données au-delà du traitement de la requête et ne les utilise pas pour entraîner ses modèles (utilisation via API)</li>
+      <li>L'historique de conversation est limité aux 10 derniers échanges et n'est pas conservé côté serveur au-delà de la session</li>
     </ul>
     <div class="highlight">
-      <p>🛡️ <strong>Engagement fort :</strong> nous n'utilisons pas vos données pour entraîner des modèles d'intelligence artificielle.</p>
+      <p>🛡️ <strong>Engagement fort :</strong> nous n'utilisons pas vos données pour entraîner des modèles d'intelligence artificielle. Vos conversations restent privées.</p>
     </div>
   </section>
 
@@ -419,11 +433,11 @@
 
     <div class="card">
       <div class="card-title">Supabase — Infrastructure et base de données</div>
-      <p>Hébergement de vos données sur des serveurs sécurisés situés dans l'Union Européenne. Supabase est conforme au RGPD.</p>
+      <p>Hébergement de vos données sur des serveurs sécurisés. Supabase est conforme au RGPD.</p>
     </div>
     <div class="card">
       <div class="card-title">Anthropic — Intelligence artificielle</div>
-      <p>Traitement des requêtes du coach IA et de l'analyse photo. Anthropic est soumis aux lois américaines sur la protection des données.</p>
+      <p>Traitement des requêtes du coach IA, génération de recettes et menus, analyse photo. Les données sont traitées sans conservation.</p>
     </div>
     <div class="card">
       <div class="card-title">Resend — Envoi d'e-mails</div>
@@ -433,6 +447,19 @@
       <div class="card-title">RevenueCat / Apple / Google — Paiements</div>
       <p>Gestion des abonnements Premium. Nous ne recevons jamais vos coordonnées bancaires directement.</p>
     </div>
+    <div class="card">
+      <div class="card-title">Open Food Facts — Base alimentaire</div>
+      <p>Recherche de produits par code-barres. Seul le code-barres scanné est transmis, aucune donnée personnelle.</p>
+    </div>
+
+    <h3>Partage avec d'autres utilisateurs (fonctionnalités sociales)</h3>
+    <p>Si vous utilisez les fonctionnalités sociales de Pasto, certaines données sont partagées avec les utilisateurs que vous ajoutez comme amis :</p>
+    <ul>
+      <li>Votre pseudo et avatar (si définis)</li>
+      <li>Votre planning de repas (uniquement si vous le partagez explicitement)</li>
+      <li>Vos listes de courses partagées</li>
+    </ul>
+    <p>Ces partages sont toujours à votre initiative et peuvent être révoqués à tout moment.</p>
   </section>
 
   <!-- 6 -->
@@ -440,12 +467,14 @@
     <div class="section-number">06</div>
     <h2>Durée de conservation des données</h2>
     <ul>
-      <li>Données de compte : conservées tant que votre compte est actif</li>
-      <li>Données de planning et recettes : conservées tant que votre compte est actif</li>
-      <li>Logs techniques anonymisés : 90 jours maximum</li>
-      <li>Suppression de compte : toutes vos données sont supprimées définitivement sous 30 jours</li>
+      <li>Données de compte et profil : conservées tant que votre compte est actif</li>
+      <li>Journal alimentaire et historique de poids : conservés tant que votre compte est actif</li>
+      <li>Données d'activité physique : conservées tant que votre compte est actif</li>
+      <li>Planning, recettes et listes de courses : conservés tant que votre compte est actif</li>
+      <li>Tokens OAuth (Strava, Google) : conservés tant que la synchronisation est active, supprimés si vous la désactivez</li>
+      <li>Suppression de compte : toutes vos données sont supprimées définitivement et immédiatement</li>
     </ul>
-    <p style="margin-top:16px;">Vous pouvez supprimer votre compte directement depuis l'application : <strong>Profil → Supprimer mon compte</strong>.</p>
+    <p style="margin-top:16px;">Vous pouvez supprimer votre compte directement depuis l'application : <strong>Profil → Supprimer mon compte</strong>. Cette action est irréversible et supprime l'intégralité de vos données.</p>
   </section>
 
   <!-- 7 -->
@@ -455,11 +484,12 @@
     <p>Conformément au Règlement Général sur la Protection des Données, vous disposez des droits suivants :</p>
     <ul>
       <li><strong>Droit d'accès</strong> — obtenir une copie de vos données personnelles</li>
-      <li><strong>Droit de rectification</strong> — corriger des données inexactes</li>
-      <li><strong>Droit à l'effacement</strong> — demander la suppression de vos données</li>
+      <li><strong>Droit de rectification</strong> — corriger des données inexactes (directement dans l'app)</li>
+      <li><strong>Droit à l'effacement</strong> — supprimer votre compte et toutes vos données (Profil → Supprimer mon compte)</li>
       <li><strong>Droit à la portabilité</strong> — recevoir vos données dans un format structuré</li>
       <li><strong>Droit d'opposition</strong> — vous opposer à certains traitements</li>
       <li><strong>Droit de limitation</strong> — limiter le traitement de vos données</li>
+      <li><strong>Droit de retrait du consentement</strong> — désactiver la synchronisation d'activité physique à tout moment</li>
     </ul>
     <p style="margin-top:16px;">Pour exercer ces droits : <strong>contact@mypasto.fr</strong></p>
     <p>En cas de désaccord, vous pouvez introduire une réclamation auprès de la <strong>CNIL</strong> : <a href="https://www.cnil.fr" style="color:var(--green-mid);">www.cnil.fr</a></p>
@@ -471,9 +501,11 @@
     <h2>Sécurité des données</h2>
     <ul>
       <li>Toutes les communications sont chiffrées via HTTPS/TLS</li>
-      <li>Les mots de passe sont hachés, jamais stockés en clair</li>
-      <li>L'accès à la base de données est protégé par des politiques de sécurité strictes (Row Level Security)</li>
-      <li>Seul le développeur a accès à l'infrastructure, avec authentification multi-facteurs</li>
+      <li>Les mots de passe sont hachés (bcrypt), jamais stockés en clair</li>
+      <li>La clé API de l'IA est stockée côté serveur, jamais dans l'application mobile</li>
+      <li>L'accès à la base de données est protégé par des politiques de sécurité au niveau des lignes (Row Level Security)</li>
+      <li>Les appels aux services IA sont authentifiés par token JWT individuel</li>
+      <li>Les quotas d'utilisation de l'IA sont vérifiés côté serveur pour empêcher tout abus</li>
     </ul>
   </section>
 
@@ -481,21 +513,21 @@
   <section id="s9">
     <div class="section-number">09</div>
     <h2>Protection des mineurs</h2>
-    <p>Pasto n'est pas destiné aux personnes de moins de 16 ans. Nous ne collectons pas sciemment de données personnelles concernant des mineurs. Si vous êtes parent et pensez que votre enfant nous a fourni des données, contactez-nous immédiatement à <strong>contact@mypasto.fr</strong>.</p>
+    <p>Pasto est destiné aux personnes de 16 ans et plus. Nous ne collectons pas sciemment de données personnelles concernant des mineurs de moins de 16 ans. Si vous êtes parent et pensez que votre enfant nous a fourni des données, contactez-nous immédiatement à <strong>contact@mypasto.fr</strong> pour demander la suppression du compte.</p>
   </section>
 
   <!-- 10 -->
   <section id="s10">
     <div class="section-number">10</div>
     <h2>Cookies et traceurs</h2>
-    <p>L'application mobile Pasto n'utilise pas de cookies de suivi publicitaire. Des tokens d'authentification sont stockés localement sur votre appareil pour maintenir votre session, conformément au fonctionnement standard des applications mobiles.</p>
+    <p>L'application mobile Pasto <strong>n'utilise aucun cookie de suivi, aucun tracker publicitaire et aucun outil d'analytics tiers</strong>. Des tokens d'authentification sont stockés localement sur votre appareil pour maintenir votre session, conformément au fonctionnement standard des applications mobiles.</p>
   </section>
 
   <!-- 11 -->
   <section id="s11">
     <div class="section-number">11</div>
     <h2>Modifications de cette politique</h2>
-    <p>Nous nous réservons le droit de modifier cette politique à tout moment. En cas de modification substantielle, vous serez notifié par e-mail ou via une notification dans l'application au moins <strong>30 jours avant</strong> l'entrée en vigueur des changements.</p>
+    <p>Nous nous réservons le droit de modifier cette politique à tout moment. En cas de modification substantielle, vous serez notifié via une notification dans l'application au moins <strong>30 jours avant</strong> l'entrée en vigueur des changements.</p>
     <p>La date de dernière mise à jour est indiquée en haut de ce document.</p>
   </section>
 
