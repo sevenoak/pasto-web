@@ -116,7 +116,6 @@
 <body>
 
 <div class="card">
-    <!-- État : chargement -->
     <div id="state-loading">
         <div class="icon icon-loading">
             <div class="spinner"></div>
@@ -125,7 +124,6 @@
         <p>On s'occupe de tout, une seconde.</p>
     </div>
 
-    <!-- État : succès -->
     <div id="state-success" class="hidden">
         <div class="icon">✅</div>
         <h1>Email vérifié !</h1>
@@ -136,7 +134,6 @@
         <div class="brand">🍽️ <strong>Pasto</strong> — Ton coach nutrition IA</div>
     </div>
 
-    <!-- État : erreur -->
     <div id="state-error" class="hidden">
         <div class="icon icon-error">❌</div>
         <h1>Lien expiré ou invalide</h1>
@@ -152,7 +149,6 @@
     const hash = window.location.hash?.substring(1);
     const hashParams = new URLSearchParams(hash);
 
-    // Supabase peut envoyer le code/token dans les query params ou dans le hash
     const code = params.get('code') || hashParams.get('code');
     const token = params.get('token_hash') || hashParams.get('token_hash');
     const accessToken = params.get('access_token') || hashParams.get('access_token');
@@ -161,28 +157,25 @@
     const hasAuth = code || token || accessToken;
 
     if (!hasAuth) {
-        // Pas de paramètre d'auth → lien cassé
         show('error');
         return;
     }
 
-    // Construire le deep link vers l'app
-    const deepLink = 'pasto://auth/confirm?' + (
+    // Deep link vers la RACINE du scheme — pas de path
+    // Les paramètres suffisent, _layout.tsx les intercepte
+    var deepLink = 'pasto://?' + (
         code ? 'code=' + encodeURIComponent(code) :
         token ? 'token_hash=' + encodeURIComponent(token) + '&type=' + type :
         'access_token=' + encodeURIComponent(accessToken)
     );
 
-    // Configurer le bouton
     document.getElementById('btn-open').href = deepLink;
 
-    // Tenter d'ouvrir l'app automatiquement
     try {
         window.location.href = deepLink;
     } catch(e) {}
 
-    // Afficher le succès après un court délai
-    setTimeout(() => show('success'), 1200);
+    setTimeout(function() { show('success'); }, 1200);
 })();
 
 function show(state) {
